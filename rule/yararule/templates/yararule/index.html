@@ -1,0 +1,26 @@
+{% extends 'yararule/base.html' %}
+
+{% block content %}
+
+{% if latest_rules_list %}
+<ul>
+{% for rules in latest_rules_list %}
+    <li><a href="// document.id }}/">{{ rules.id }}</a></li>
+    <li><a href="/rule_manage/ document.id }}/">{{ docfile.name }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+
+{% if rules %}
+<ul>
+   {% for rules in rules %}
+       <li>{{ rules.docfile.name }}</li>
+   {% endfor %}
+</ul>
+{% else %}
+<p>No documents.</p>
+{% endif %}
+{% endblock %}
+    

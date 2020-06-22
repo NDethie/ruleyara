@@ -1,0 +1,27 @@
+<div class="col-lg-12">
+    <hr>
+    <h2 class="intro-text text-center">{{ list_title }}
+    </h2>
+    <hr class="detail-separator">
+</div>
+
+{% include 'yararule/search_form.html' %}
+
+{% if rules|length_is:"0" %}
+    <div class="text-center">
+      Palsambleu ! Nous n'avons trouvé aucun résultat à cette requête. Même pas de quoi se ronger la chique !
+      Partez de nouveau à l'abordage !
+    </div>
+
+{% else %}
+    {% for rules in rules %}
+        <div class="col-sm-4 text-center">
+            <li>{{ rules.docfile.name }}</li>
+            {% for tags in album.tags.all %}
+                <p>{{ tags.name }}</p>
+            {% endfor %}
+        </div>
+        {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
+    {% endfor %}
+
+{% endif %}

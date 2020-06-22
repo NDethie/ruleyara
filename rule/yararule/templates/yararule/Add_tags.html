@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Télécharger des fichiers avec Django </title>   
+    </head>
+    <body>
+    
+    {% if tags %}
+        <ul>
+        {% for tags in tags %}
+            <li>{{ tags.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+
+    
+
+        <!-- Upload form. Note enctype attribute! -->
+        <form action="http://127.0.0.1:8000/yararule/tags/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+
+            </p>
+
+            <p><input type="submit" value="Upload" /></p>
+        </form>
+    </body>
+</html>
