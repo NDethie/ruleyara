@@ -53,6 +53,8 @@ def Index(request):
     }
     return render(request, 'yararule/listing.html', context)
 
+
+
 #search by name and tags
 def Search(request):
     query = request.GET.get('query')
@@ -70,6 +72,8 @@ def Search(request):
         'title': title
     }
     return render(request,'yararule/search.html', context)
+
+
 
 #add tags to the list
 def AddTags(request):
@@ -89,6 +93,8 @@ def AddTags(request):
                              {'tags': tags,'form': form}
                               )
 
+
+
 #add tags to a docfile
 def Taging(request):
     rules = Rules.objects.all()
@@ -100,6 +106,7 @@ def Taging(request):
     return render(request, 'yararule/taging.html',
                              {'tags': tags,'rules': rules}
                               )
+
 
 
 def Upload(request):

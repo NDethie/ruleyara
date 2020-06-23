@@ -1,7 +1,9 @@
+<!-- Ule template de base -->
 {% extends 'yararule/base.html' %}
 
 {% block content %}
-    
+
+    <!-- Afficher le resultat de le recherche -->   
     {% include 'yararule/list.html'  with list_title='Resultats de la requete' %}
 
 {% endblock %}

@@ -8,17 +8,17 @@
 
 {% if rules|length_is:"0" %}
     <div class="text-center">
-     Aucune regle ou tag de ce nom
+        Aucune regle ou tag de ce nom
     </div>
-
 {% else %}
-    {% for rules in rules %}
+
+{% for rules in rules %}
         <div class="col-sm-4 text-center">
             <li><p>{{ rules.docfile.name }}<p>
                 <p>{{ rules.tags.name }} #tags</p>
             </li>
         </div>
         {% if forloop.counter|divisibleby:3 %}<div class="clearfix"></div>{% endif %}
-    {% endfor %}
+{% endfor %}
 
 {% endif %}

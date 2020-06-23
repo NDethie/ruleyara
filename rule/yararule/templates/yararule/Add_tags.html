@@ -1,16 +1,8 @@
+ 
 
-    
-
-        <!-- Upload form. Note enctype attribute! -->
+        <!-- Ajouter des tags -->
         <form action="http://127.0.0.1:8000/yararule/tags/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <p><label for="TagsForm" width=500px >Ajouter un tag </label> </p>           
             <input id="name" type="text" name="name" value="{{ name }}">
             <input type="submit" value="Ajouter" />
-
-            </p>
-
-            
-        </form>
-    </body>
-</html>

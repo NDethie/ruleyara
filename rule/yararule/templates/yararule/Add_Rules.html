@@ -1,6 +1,8 @@
 {% extends 'yararule/base.html' %}
 
 {% block content %}
+
+<!-- Qjouter les regles -->
 <div class="col-sm-4 text-center">
     <p>
         <form action="http://127.0.0.1:8000/yararule/addrules/" method="post" enctype="multipart/form-data">
@@ -12,6 +14,7 @@
     </p><br>
     <br>
     <br>
+    <!-- Ajouter de nouveaux tags -->
     <p>
         {% include 'yararule/Add_tags.html' %}</p>
     </p>
