@@ -11,8 +11,7 @@ $sudo aptitude install python3-django
 
 pip pour installer Django
 
--pip install django   
-
+$pip install django
 
 Créer l’environnement virtuel et y accéder
 
