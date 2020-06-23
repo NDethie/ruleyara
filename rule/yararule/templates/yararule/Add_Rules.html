@@ -1,25 +1,25 @@
 {% extends 'yararule/base.html' %}
 
 {% block content %}
-
-    {% if rules %}
-        <ul>
-        {% for rules in rules %}
-            <li>{{ rules.docfile.name }}</li>
-            <li>{{ rules.tags.id }}</li>
-
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No rules.</p>
-    {% endif %}
-
-        <!-- Upload form. Note enctype attribute! -->
+<div class="col-sm-4 text-center">
+    <p>
         <form action="http://127.0.0.1:8000/yararule/addrules/" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
-            <p><input type="submit" value="Upload" /></p>
+            {{ form.as_p }} {{ message }}
+           <input type="submit" value="Ajouter" /> <br>
+           ou Afficher la <a href="http://127.0.0.1:8000/yararule/"> liste</a>
         </form>
+    </p><br>
+    <br>
+    <br>
+    <p>
+        {% include 'yararule/Add_tags.html' %}</p>
+    </p>
+</div>
+
+
+        <!-- Upload form. Note enctype attribute! -->
+        
 
 {% endblock %}
     

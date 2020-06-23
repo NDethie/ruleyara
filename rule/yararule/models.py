@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from django.core.validators import FileExtensionValidator
 
 
 
@@ -12,13 +13,12 @@ class Tags(models.Model):
 
 
 class Rules(models.Model):
-    docfile = models.FileField(upload_to='biblio')
+    docfile = models.FileField(upload_to='biblio', validators=[FileExtensionValidator(['yar'])] )
     tags = models.ManyToManyField(Tags, related_name='files')
 
 
 class RulesForm(forms.Form):
-    docfile = forms.FileField(label='Selectionner un fichier',
-                          help_text='Taille max.: 42 megabytes')
+    docfile = forms.FileField(label='Ajouter une regle')
     tags= forms.ModelMultipleChoiceField(queryset=Tags.objects.all())
 
 class TagsForm(forms.Form):

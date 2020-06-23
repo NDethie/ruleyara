@@ -1,0 +1,13 @@
+<form action="http://127.0.0.1:8000/yararule/taging/" method="post">
+    {% csrf_token %}
+    {% for rules in rules %}
+            
+                <li>{{ rules.docfile.name }}</li>       
+    {% for tags in tags %}
+        <input type="radio" name="tags" id="tags{{ forloop.counter }}" value="{{ tags.id }}">
+        <label for="tags{{ forloop.counter }}">{{ tags.name }}</label><br>
+    {% endfor %}
+    <input type="submit" value="Vote">
+    {% endfor %}
+    
+    </form>
