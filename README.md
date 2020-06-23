@@ -46,3 +46,9 @@ Démarrer le projet
 
 $pythron manage.py runserver    
 
+
+
+Accéder à la page d’accueil
+
+
+127.0.0.1:8000/yararule/
